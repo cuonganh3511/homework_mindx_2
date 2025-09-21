@@ -122,3 +122,111 @@ function sumGreaterThan (value, n) {
 	}, 0)
 }
 console.log(sumGreaterThan([1, 2, 3, 4], 2));
+
+// BT 18:
+
+function formatDate(year) {
+	const newYear =  year.split("-"); // .split("-") phan tach theo dau - 
+	console.log(newYear);
+	const [years, month, day] = newYear;
+	return `${years} / ${month} / ${day}`;
+}
+console.log(formatDate("2024-11-28"));
+
+// BT 19:
+function firstThree(value) {
+	const newValue = value.splice(0,3)
+	return newValue
+}
+console.log(firstThree([1, 2, 3, 4, 5]));
+
+// BT 20:
+function containsChar(value, world) {
+	return value.includes(world) // abc.includes("a")
+}
+
+console.log(containsChar("javascript", "i"));
+
+// BT 21:
+function mergeArrays(num1, num2) {
+	return [...num1,...num2]
+}
+console.log(mergeArrays([1, 2], [3, 4]));
+
+// BT 22:
+function countOccurrences(value, find) {
+	const checkValue = value.filter((item) => item === find )	
+	return checkValue.length
+}
+console.log(countOccurrences([1, 2, 2, 3, 2], 2));
+
+// BT 23:
+function filterOdd(value) {
+	const newValue = value.filter((item) => item % 2 !== 0)
+	return newValue;
+}
+console.log(filterOdd([1, 2, 3, 4]));
+
+// BT 24:
+function greaterThan(value, find) {
+	const findValue = value.filter(item => item > find)
+	return findValue
+}
+console.log(greaterThan([1, 2, 3, 4], 2));
+
+// BT 25:
+function factorial(num) {
+	if(num <= 0) return undefined;
+	let result = 1;
+	for(let i = 1; i <= num; i++) {
+		result *= i;
+	}
+	return result;
+}
+console.log(factorial(5));
+
+// BT 26:
+function separateEvenOdd(num) {
+	const newOdd = num.filter(item => item % 2 !== 0);
+	const newEven = num.filter(item => item % 2 === 0);
+	const separate = {"even": newEven, "odd": newOdd}
+	return separate;
+}
+console.log(separateEvenOdd([1, 2, 3, 4]));
+
+// BT 27:
+function sortAsc(num) {
+	return num.sort((a, b) => a - b)
+}
+console.log(sortAsc([3, 1, 4, 2]));
+
+// BT 28:
+function sumEvenIndex(num) {
+	let result = 0;
+	// const newNum = num.length;
+	for(let i = 0; i <= num.length-1; i++) {
+		if(i % 2 === 0) {
+			result += num[i]
+		}
+	}
+	return result
+}
+console.log(sumEvenIndex([1, 2, 3, 4]));
+
+// function sumEvenIndex(arr) {
+//   return arr.reduce((sum, val, i) => i % 2 === 0 ? sum + val : sum, 0);
+// }
+
+// console.log(sumEvenIndex([1, 2, 3, 4])); // 4
+
+// BT 29:
+function multiplyByTwo(value) {
+	return value.map(item => item * 2)
+}
+console.log(multiplyByTwo([1, 2, 3]));
+
+// BT 30:
+function arrayToString(string) {
+	return string.join("")
+}
+console.log(arrayToString(["a", "b", "c"]));
